@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cluedo</title>
+    <link rel="stylesheet" href="/css/mvp.css">
+</head>
+<body>
+<main>
+    <header>
+        <h1>Cluedo data lists:</h1>
+    </header>
+    <div>
+        <h2>The persons</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Form of address</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:bgcolor="${person.color}" th:each="person : ${persons}">
+                <td th:text="${person.name}"></td>
+                <td th:text="${person.formOfAddress}"></td>
+                <td><label>
+                    <input name="person" type="radio">
+                </label></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h2>The weapons</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Weapon</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="weapon : ${weapons}">
+                <td th:text="${weapon.name}"></td>
+                <td><label>
+                    <input name="weapon" type="radio">
+                </label></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h2>The rooms</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Room</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="room : ${rooms}">
+                <td th:text="${room.name}"></td>
+                <td><label>
+                    <input name="room" type="radio">
+                </label></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+<footer>
+    <hr>
+    <p>
+        <small>(c) Christian Gebert</small>
+    </p>
+</footer>
+</body>
+</html>
